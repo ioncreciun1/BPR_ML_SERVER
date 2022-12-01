@@ -2,7 +2,7 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/sign-language-translation", methods = ["POST"])
-def hello():
+def get_word():
   return "Hello World!"
 
 if __name__ == "__main__":
