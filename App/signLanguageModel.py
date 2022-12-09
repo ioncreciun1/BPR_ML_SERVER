@@ -110,6 +110,7 @@ class SignLanguageModel():
                     pose_arr.append(None)
                     left_hand_arr.append(None)
         return [pose_arr,right_hand_arr,left_hand_arr]
+        
     def get_preprocess_data(self, input_data):
         pose = input_data["POSE_LANDMARKS"]
         left_hands = []
