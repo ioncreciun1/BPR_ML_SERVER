@@ -29,10 +29,9 @@ class SignLanguageModel():
 
 
     def extract_keypoints(self,pose_world_landmarks,right_hand_world_landmarks,left_hand_world_landmarks):
-
-        pose = np.array([[res['x'], res['y']] for res in pose_world_landmarks]).flatten() if pose_world_landmarks else np.zeros(12*2)
-        lh = np.array([[res['x'], res['y'], res['z']] for res in left_hand_world_landmarks ]).flatten() if left_hand_world_landmarks else np.zeros(21*3)
-        rh = np.array([[res['x'], res['y'], res['z']] for res in right_hand_world_landmarks ]).flatten() if right_hand_world_landmarks else np.zeros(21*3)
+        pose = np.array([[round(res['x']), round(res['y'])] for res in pose_world_landmarks]).flatten() if pose_world_landmarks else np.zeros(12*2)
+        lh = np.array([[round(res['x']), round(res['y']), round(res['z'])] for res in left_hand_world_landmarks ]).flatten() if left_hand_world_landmarks  else np.zeros(21*3)
+        rh = np.array([[round(res['x']), round(res['y']), round(res['z'])] for res in right_hand_world_landmarks ]).flatten() if right_hand_world_landmarks else np.zeros(21*3)
         return np.concatenate([pose, lh, rh])
 
 
